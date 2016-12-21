@@ -1,0 +1,13 @@
+diff --git a/bindings/py/requirements.txt b/bindings/py/requirements.txt
+index 3e6ad7c..4f96b84 100644
+--- a/bindings/py/requirements.txt
++++ b/bindings/py/requirements.txt
+@@ -1,5 +1,5 @@
+ #See http://www.pip-installer.org/en/latest/requirements.html for details
+-pytest==2.5.1
+-pytest-cov==1.6
++pytest>=2.5.1
++pytest-cov>=1.6
+ pytest-xdist==1.8
+-numpy==1.11.2
++numpy>=1.11

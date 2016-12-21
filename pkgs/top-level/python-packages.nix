@@ -13981,6 +13981,8 @@ in modules // {
     };
   };
 
+  nupic = callPackage (import ../development/python-modules/nupic) {};
+
   nwdiag = buildPythonPackage rec {
     name = "nwdiag-1.0.3";
 

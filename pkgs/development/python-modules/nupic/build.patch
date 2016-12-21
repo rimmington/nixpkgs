@@ -1,0 +1,58 @@
+diff --git a/requirements.txt b/requirements.txt
+index b542b25..708318c 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,21 +1,22 @@
+ #See http://www.pip-installer.org/en/latest/requirements.html for details
+ asteval==0.9.1
+-coverage==3.7.1
+-mock==1.0.1
++coverage>=3.7.1
++mock>=1.0.1
+ ordereddict==1.1
+-psutil==1.0.1
+-pytest==2.5.1
+-pytest-cov==1.6
++psutil>=1.0.1
++pytest>=2.5.1
++pytest-cov>=1.6
+ pytest-xdist==1.8
+ python-dateutil==2.1
+-PyYAML==3.10
+-unittest2==0.5.1
+-validictory==0.9.1
+-PyMySQL==0.6.2
++PyYAML>=3.10
++unittest2>=0.5.1
++validictory>=0.9.1
++PyMySQL>=0.6.2
+ DBUtils==1.1
+ pyproj==1.9.3
+-prettytable==0.7.2
++prettytable>=0.7
++pycapnp>=0.5.1
+ # When updating nupic.bindings, also update any shared dependencies to keep
+ # versions in sync.
+ nupic.bindings==0.4.13
+-numpy==1.11.2
++numpy>=1.11
+diff --git a/setup.py b/setup.py
+index cc3438f..04d3e6d 100644
+--- a/setup.py
++++ b/setup.py
+@@ -146,15 +146,6 @@ if __name__ == "__main__":
+     cmdclass = {"test": TestCommand},
+     include_package_data=True,
+     zip_safe=False,
+-    extras_require = {
+-      # Default requirement based on system type
+-      ":platform_system=='Linux' or platform_system=='Darwin'":
+-        ["pycapnp==0.5.8"],
+-
+-      # Superseded by platform_system-conditional requirement, but keeping
+-      # empty extra for compatibility as recommended by setuptools doc.
+-      "capnp": [],
+-    },
+     description="Numenta Platform for Intelligent Computing",
+     author="Numenta",
+     author_email="help@numenta.org",
