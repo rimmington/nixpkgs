@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLATFORMS="i686-unknown-linux-gnu x86_64-unknown-linux-gnu i686-apple-darwin x86_64-apple-darwin"
+PLATFORMS="i686-unknown-linux-gnu x86_64-unknown-linux-gnu i686-apple-darwin x86_64-apple-darwin armv7-unknown-linux-gnueabihf"
 BASEURL="https://static.rust-lang.org/dist"
 VERSION=$1
 
