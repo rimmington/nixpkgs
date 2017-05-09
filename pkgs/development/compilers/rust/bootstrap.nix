@@ -14,6 +14,8 @@ let
     then "x86_64-apple-darwin"
     else if stdenv.system == "armv7l-linux"
     then "armv7-unknown-linux-gnueabihf"
+    else if stdenv.system == "aarch64-linux"
+    then "aarch64-unknown-linux-gnu"
     else abort "missing boostrap url for platform ${stdenv.system}";
 
   # fetch hashes by running `print-hashes.sh 1.14.0`
@@ -28,6 +30,8 @@ let
     then "3381341524b0184da5ed2cdcddc2a25e2e335e87f1cf676f64d98ee5e6479f20"
     else if stdenv.system == "armv7l-linux"
     then "cb0b5f64c2699640357d0edb336366ad7b088f084fbb76fc8df7798da420520b"
+    else if stdenv.system == "aarch64-linux"
+    then "e4c47824dce4a17225573ce152a36709dfccfeb7b450abee6426a3092b4a1047"
     else throw "missing boostrap hash for platform ${stdenv.system}";
 
   needsPatchelf = stdenv.isLinux;
