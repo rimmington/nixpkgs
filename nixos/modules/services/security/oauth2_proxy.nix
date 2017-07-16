@@ -64,6 +64,7 @@ let
     ${optionalString (!isNull cfg.redirectURL) "--redirect-url='${cfg.redirectURL}'"} \
     --request-logging=${boolToString cfg.requestLogging} \
     ${optionalString (!isNull cfg.scope) "--scope='${cfg.scope}'"} \
+    --set-xauthrequest=${boolToString cfg.setXAuthRequest} \
     ${repeatedArgs (x: "--skip-auth-regex='${x}'") cfg.skipAuthRegexes} \
     ${optionalString (!isNull cfg.signatureKey) "--signature-key='${cfg.signatureKey}'"} \
     --upstream='${cfg.upstream}' \
@@ -308,6 +309,15 @@ in
       default = true;
       description = ''
         Pass the request Host Header to upstream.
+      '';
+    };
+
+    setXAuthRequest = mkOption {
+      type = types.bool;
+      default = false;
+      description = ''
+        Set X-Auth-Request-User and X-Auth-Request-Email response headers,
+        useful in Nginx auth_request mode.
       '';
     };
 
